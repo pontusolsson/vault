@@ -1,0 +1,15 @@
+galaxy_info:
+  author: Pontus Olsson
+  company: Telia TV & Media
+  min_ansible_version: 2.4
+  license: proprietary
+  platforms:
+  - name: RHEL
+    versions:
+    - 7
+  - name: Ubuntu
+    versions:
+    - 16.04
+  galaxy_tags: []
+
+dependencies: []

@@ -1,0 +1,8 @@
+---
+
+- import_tasks: 'include-vaults.yml'
+  tags: always
+  check_mode: false
+  delegate_to: localhost
+  become: false
+  run_once: true

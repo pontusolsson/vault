@@ -1,0 +1,16 @@
+---
+- name: 'Decide on vaults for inclusion'
+  stat:
+  args:
+    path: '{{ role_path }}/vaults/{{ item }}
+  register: vaults
+  with_items: '{{ groups | list }}'
+
+- name: 'Include vaults'
+  include_vars:
+  args:
+    name: 'vault'
+    dir: '{{ item.stat.path }}'
+  with_items: '{{ vaults.results }}'
+  when: item.stat.exists and item.stat.isdir | d( false )
+
